@@ -51,7 +51,7 @@ export default {
             required: false,
             default: function () {
                 return {
-                    days: 'Day',
+                    days: 'Days',
                     hours: 'Hours',
                     minutes: 'Minutes',
                     seconds: 'Seconds',
@@ -116,6 +116,7 @@ export default {
             throw new Error("Invalid props value, correct the 'deadline'");
         }
         this.interval = setInterval(() => {
+            console.log(this.days)
             if(this.days < 1){
                 this.labels.days = 'Day';
             }
