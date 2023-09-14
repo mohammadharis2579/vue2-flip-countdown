@@ -116,18 +116,17 @@ export default {
             throw new Error("Invalid props value, correct the 'deadline'");
         }
         this.interval = setInterval(() => {
-            console.log(this.days)
             if(this.days < 1){
-                this.labels.days = 'Day';
+                this.$set(this.labels, "days", 'Day');
             }
             if(this.hours == 1){
-                this.labels.hours = 'Hour';
+                this.$set(this.labels, "hours", 'Hour');
             }
             if(this.minutes == 1){
-                this.labels.minutes = 'Minute';
+                this.$set(this.labels, "minutes", 'Minute');
             }
             if(this.seconds == 1){
-                this.labels.seconds = 'Second';
+                this.$set(this.labels, "seconds", 'Second');
             }
             this.now = Math.trunc(new Date().getTime() / 1000);
         }, 1000);
