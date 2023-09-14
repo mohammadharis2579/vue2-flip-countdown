@@ -8,7 +8,7 @@
                 <b class="flip-card__back" v-bind:data-value="data.previous | twoDigits"></b>
                 <b class="flip-card__back-bottom" v-bind:data-value="data.previous | twoDigits"></b>
             </span>
-            <span class="flip-clock__slot" :style="labelSize ? `font-size:${labelSize}` : ''">{{ data.label }}</span>
+            <span class="flip-clock__slot" :style="labelSize ? `font-size:${labelSize}` : ''">{{ data.current == 1 ? data.label : data.label + 's' }}</span>
         </span>
     </template>
 </div>
@@ -51,10 +51,10 @@ export default {
             required: false,
             default: function () {
                 return {
-                    days: 'Days',
-                    hours: 'Hours',
-                    minutes: 'Minutes',
-                    seconds: 'Seconds',
+                    days: 'Day',
+                    hours: 'Hour',
+                    minutes: 'Minute',
+                    seconds: 'Second',
                 };
             },
         },
@@ -116,18 +116,6 @@ export default {
             throw new Error("Invalid props value, correct the 'deadline'");
         }
         this.interval = setInterval(() => {
-            if(this.days < 1){
-                this.$set(this.labels, "days", 'Day');
-            }
-            if(this.hours == 1){
-                this.$set(this.labels, "hours", 'Hour');
-            }
-            if(this.minutes == 1){
-                this.$set(this.labels, "minutes", 'Minute');
-            }
-            if(this.seconds == 1){
-                this.$set(this.labels, "seconds", 'Second');
-            }
             this.now = Math.trunc(new Date().getTime() / 1000);
         }, 1000);
     },
