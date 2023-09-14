@@ -51,7 +51,7 @@ export default {
             required: false,
             default: function () {
                 return {
-                    days: 'Days',
+                    days: 'Day',
                     hours: 'Hours',
                     minutes: 'Minutes',
                     seconds: 'Seconds',
