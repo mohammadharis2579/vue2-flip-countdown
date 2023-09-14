@@ -10,7 +10,7 @@
   "dependencies": {
     "moment": "^2.29.4",
     "vue": "^2.6.6",
-    "vue2-flip-countdown": "^1.0.0",
+    "vue2-flip-countdown": "github:mohammadharis2579/vue2-flip-countdown",
     "@babel/eslint-parser": "^7.19.1"
   },
   "devDependencies": {
